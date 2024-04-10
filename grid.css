@@ -1,0 +1,12 @@
+.container{
+    width: 400px;
+    display: grid;
+    background-color: aqua;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.box{
+    text-align: center;
+    width: 80px;
+    background-color: blueviolet;
+}
