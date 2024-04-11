@@ -1,63 +1,92 @@
-.container{
-    background-color: darksalmon;
-    height: 400px;
-    display: grid;
-    gap: 10px;
+.container {
+  background-color: green;
+  height: 400px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
 
-.header{
+.header {
+  background-color: pink;
+  grid-row: 1;
+  grid-column: 1 / span 12;
+}
+
+.sidebar {
+  background-color: pink;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 12;
+}
+
+.navigation {
+  background-color: pink;
+  grid-row: 2;
+  grid-column-start: 4;
+  grid-column-end: 10;
+}
+
+.main {
+  background-color: pink;
+  grid-row-start: 3;
+  grid-row-end: 12;
+  grid-column-start: 4;
+  grid-column-end: 10;
+}
+
+.ads {
+  background-color: pink;
+  grid-row-start: 2;
+  grid-row-end: 12;
+  grid-column-start: 10;
+  grid-column-end: 13;
+}
+
+.footer {
+  background-color: pink;
+  grid-row: 12;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+@media (max-width: 720px) {
+
+  .header{
     grid-row: 1;
-    grid-column: 1/12;
-    
-}
+    grid-column: 1/span 12;
+  }
 
-.sidebar{
-    display: grid;
+  .navigation{
+    grid-row: 2;
     grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 10;
-}
+    grid-column-end: 13;
+  }
 
-.navigation{
-   display: grid;
-   grid-row: 2;
-   grid-column-start: 3;
-   grid-column-end: 9;
-}
-
-.main{
-    display: grid;
+  .sidebar{
     grid-row-start: 3;
-    grid-row-end: 10;
-    grid-column-start: 3;
-    grid-column-end: 9;
-}
+    grid-row-end: 12;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
 
-.ads{
-    display: grid;
-    grid-row-start: 2;
-    grid-row-end: 10;
-    grid-column-start: 9;
-    grid-column-end: 12;
-}
+  .main {
+    grid-row-start: 3;
+    grid-row-end: 12;
+    grid-column-start: 4;
+    grid-column-end: 13;
+  }
 
-.footer{
+  .ads{
     grid-row: 12;
     grid-column-start: 1;
-    grid-column-end: 12;
-}
+    grid-column-end: 4;
+  }
 
-@media (min-width:721px){
-    .container{
-        background-color: darksalmon;
-        height: 400px;
-        display: grid;
-        gap: 10px;
-    }
-    /* .header{
-        grid-row: 1;
-        grid-column: 12/12;
-        
-    } */
+  .footer{
+    grid-column-start: 4;
+    grid-column-end: 13;
+    grid-row: 12;
+  }
 }
